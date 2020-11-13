@@ -1,5 +1,5 @@
 * {
-  
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -15,7 +15,6 @@ body {
   margin: 0 auto;
   
   width: 40%;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -33,5 +32,6 @@ main > h1 {
 .field
 {
 
+  box-shadow: white;
   border-radius: 10%;
 }

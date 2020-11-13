@@ -1,8 +1,8 @@
 * {
-  
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+html, body {
   margin: 0;
   border: 0;
   padding: 0;
@@ -10,14 +10,9 @@ body {
   background: linear-gradient(90deg, rgb(111, 39, 255) 2%, rgba(0,212,255,1) 100%);
   color: white;
   
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  
-  width: 40%;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  width: 50%;
 
+}
 
 main {
   margin: auto;
@@ -28,10 +23,4 @@ main {
 main > h1 {
   text-align: center;
   font-size: 3.5em;
-}
-
-.field
-{
-
-  border-radius: 10%;
 }
