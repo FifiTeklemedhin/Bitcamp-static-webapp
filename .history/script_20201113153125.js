@@ -20,12 +20,16 @@ function jsonifyData(event)
 
     if(validateURL(url) == null)
     {
-        $('#popup').html("INVALID URL");
+        $('#form-status').html("INVALID URL");
+        var popup = document.getElementById("popup");
+        popup.classList.toggle("show");
         return;
     }  
     if(validatePhonenumber(phonenumber) == null)
     {
-        $('#popup').html("INVALID PHONENUMBER");
+        $('#form-status').html("INVALID PHONENUMBER");
+        var popup = document.getElementById("popup");
+        popup.classList.toggle("show");
         return;
     }  
 
@@ -64,8 +68,9 @@ function jsonifyData(event)
             console.log("success");
         },
       });
-    $('#popup').html("FORM STATUS: SUCCESS");  
-    
+    $('#popup').html("SUCCESS");  
+    var popup = document.getElementById("popup");
+    popup.classList.toggle("show");
     console.log(data);
 }
 

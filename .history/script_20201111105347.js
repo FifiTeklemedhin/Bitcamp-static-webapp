@@ -20,12 +20,12 @@ function jsonifyData(event)
 
     if(validateURL(url) == null)
     {
-        $('#popup').html("INVALID URL");
+        $('#form-status').html("INVALID URL");
         return;
     }  
     if(validatePhonenumber(phonenumber) == null)
     {
-        $('#popup').html("INVALID PHONENUMBER");
+        $('#form-status').html("INVALID PHONENUMBER");
         return;
     }  
 
@@ -64,8 +64,7 @@ function jsonifyData(event)
             console.log("success");
         },
       });
-    $('#popup').html("FORM STATUS: SUCCESS");  
-    
+    $('#form-status').html("SUCCESS");  
     console.log(data);
 }
 

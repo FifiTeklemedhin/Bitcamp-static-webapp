@@ -14,11 +14,10 @@ body {
   position: relative;
   display: block;
   margin: 0 auto;
-  margin-top: 8%;
+  margin-top: 10%;
   width: 40%;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 4px;
-
 }
 
 h1 {
@@ -40,28 +39,10 @@ main > h1 {
 
 .field {
   width: 32em;
-  height: 3em;
-  border-color: transparent;
-  background-color: white;
-  color: black;
 }
 
 .submit {
 
   width: 200px;
-  font-size: 25px;
-  border-radius: 7px;
-  background-color: rgb(96, 87, 196);
-  color: white;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  border-color: transparent;
-  margin-top: 1ch;
-  margin-left: 6ch;
-  margin-bottom: 2ch;
-}
-
-#popup {
-  font-size: 25px;
-  color: white;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: cornsilk;
 }

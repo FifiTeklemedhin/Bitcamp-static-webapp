@@ -64,7 +64,7 @@ function jsonifyData(event)
             console.log("success");
         },
       });
-    $('#popup').html("FORM STATUS: SUCCESS");  
+    $('#popup').html("SUCCESS");  
     
     console.log(data);
 }

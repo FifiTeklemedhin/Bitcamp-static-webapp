@@ -23,20 +23,16 @@
         <h4>Baseline discount percentage: </h4>
         <input id="percentage" name="percentage" type="number" placeholder="-" required class="field">    
 
-        <h4>Notification time frame (days): </h4>
+        <h4>Notification time frame (weeks): </h4>
         <input id="duration" name="duration" type="number" placeholder="-" required class="field"> 
         
         <br>
         <br>
         <button type="submit" onsubmit="jsonifyData(event)" class="submit">Submit</button>
-        
-        <br>
-        <span class="form-status" id="popup"></span>
-        
-       
-
     </form>
-
-    
+    <div class="form-status" onsubmit="jsonifyData(event)">Form Status:
+        <span class="form-status" id="form-status-message">Null</span>
+      </div>
+    <h3 class="form-status" id="form-status">Form Status: null</h3>
 </body>
 </html>
