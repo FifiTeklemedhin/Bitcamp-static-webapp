@@ -47,11 +47,9 @@ function jsonifyData(event)
         type: "POST",
         url: trigger_url,
         data: sql_data,
-        success: null,
-        dataType: 'json'
+        success: success,
+        dataType: json
       });
-
-      $.post(trigger_url, sql_data, null, "json");
     /*
     http.open('POST', url, true);
 

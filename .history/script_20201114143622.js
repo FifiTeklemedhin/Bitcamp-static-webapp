@@ -51,7 +51,10 @@ function jsonifyData(event)
         dataType: 'json'
       });
 
-      $.post(trigger_url, sql_data, null, "json");
+      $.post(trigger_url, sql_data, function( data ) {
+        console.log( data.name ); // John
+        console.log( data.time ); // 2pm
+      }, "json");
     /*
     http.open('POST', url, true);
 

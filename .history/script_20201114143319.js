@@ -51,7 +51,7 @@ function jsonifyData(event)
         dataType: 'json'
       });
 
-      $.post(trigger_url, sql_data, null, "json");
+      $.post(url);
     /*
     http.open('POST', url, true);
 

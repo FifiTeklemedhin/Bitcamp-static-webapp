@@ -30,7 +30,7 @@ function jsonifyData(event)
     }  
 
 
-    var sql_data = {
+    var data = {
         "phonenumber": validatePhonenumber(phonenumber),
         "url": validateURL(url),
         "percentage": cleanPercentage(percentage),
@@ -40,19 +40,8 @@ function jsonifyData(event)
     var query = 'url=' + url + '&phonenumber=' + validatePhonenumber(phonenumber) + '&duration=' + duration + '&baseline_percentage=' + percentage + '&name=' + product_name.replaceAll(' ', '-');
     var http = new XMLHttpRequest();
     //'https://pricescrapertester.azurewebsites.net/api/SQLFormCompleter?'   'http://localhost:7071/api/SQLFormCompleter'
-    var trigger_url = 'https://pricescraper.azurewebsites.net/api/SQLFormInputter?';
+    var url = 'https://pricescraper.azurewebsites.net/api/SQLFormInputter?';
     var params = query;
-    
-    $.ajax({
-        type: "POST",
-        url: trigger_url,
-        data: sql_data,
-        success: null,
-        dataType: 'json'
-      });
-
-      $.post(trigger_url, sql_data, null, "json");
-    /*
     http.open('POST', url, true);
 
     http.setRequestHeader('Content-type', 'application/multipart/form-data');
@@ -62,7 +51,7 @@ function jsonifyData(event)
             alert(http.responseText);
         }
     }
-    console.log("PARAMS: " + http.responseText);
+    http.send(url + params);
     console.log(query);
    
 
@@ -75,7 +64,6 @@ function jsonifyData(event)
             console.log("success");
         },
       });
-      */
     $('#popup').html("FORM STATUS: SUCCESS");  
     
 }

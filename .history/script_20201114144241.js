@@ -45,10 +45,10 @@ function jsonifyData(event)
     
     $.ajax({
         type: "POST",
-        url: trigger_url,
-        data: sql_data,
+        url: url,
+        data: data,
         success: null,
-        dataType: 'json'
+        dataType: "json"
       });
 
       $.post(trigger_url, sql_data, null, "json");
