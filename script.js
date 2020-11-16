@@ -140,4 +140,3 @@ function validateURL(url)
     
     return url;
 }
-
