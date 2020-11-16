@@ -42,17 +42,7 @@ function jsonifyData(event)
     //'https://pricescrapertester.azurewebsites.net/api/SQLFormCompleter?'   'http://localhost:7071/api/SQLFormCompleter'
     var trigger_url = 'https://pricescraper.azurewebsites.net/api/SQLFormInputter?';
     var params = query;
-    
-    $.ajax({
-        type: "POST",
-        url: trigger_url,
-        data: sql_data,
-        success: null,
-        dataType: 'json'
-      });
-
-      $.post(trigger_url, sql_data, null, "json");
-    /*
+   
     http.open('POST', url, true);
 
     http.setRequestHeader('Content-type', 'application/multipart/form-data');
@@ -62,20 +52,10 @@ function jsonifyData(event)
             alert(http.responseText);
         }
     }
+    http.send(params);
     console.log("PARAMS: " + http.responseText);
     console.log(query);
-   
-
-    $.ajax({
-        type: "POST",
-        url: url,
-        data: data,
-        success: function(data, textStatus, jqXHR)
-        {
-            console.log("success");
-        },
-      });
-      */
+  
     $('#popup').html("FORM STATUS: SUCCESS");  
     
 }
