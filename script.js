@@ -1,14 +1,3 @@
-/*
-    TODO:
-        validate inputs
-            phone number
-            duration
-            baseline percentage
-            url
-
-        clean information and store in JSON format
-        post that information to a database
-*/
 function jsonifyData(event)
 {
     event.preventDefault();
@@ -28,6 +17,18 @@ function jsonifyData(event)
         $('#popup').html("INVALID PHONENUMBER");
         return;
     }  
+/*
+    $.ajax({
+        type: "POST",
+        url: trigger_url,
+        data: sql_data,
+        success: null,
+        dataType: 'json'
+      });
+
+      $.post(trigger_url, sql_data, null, "json");
+   */
+
 
 
     var sql_data = {
@@ -37,13 +38,12 @@ function jsonifyData(event)
         "duration": cleanDuration(duration)
     }
 
-    var query = 'url=' + url + '&phonenumber=' + validatePhonenumber(phonenumber) + '&duration=' + duration + '&baseline_percentage=' + percentage + '&name=' + product_name.replaceAll(' ', '-');
+    var params = 'url=' + url + '&phonenumber=' + validatePhonenumber(phonenumber) + '&duration=' + duration + '&baseline_percentage=' + percentage + '&name=' + product_name.replaceAll(' ', '-');
     var http = new XMLHttpRequest();
-    //'https://pricescrapertester.azurewebsites.net/api/SQLFormCompleter?'   'http://localhost:7071/api/SQLFormCompleter'
+    //TRIGGER LINKS: 'https://pricescrapertester.azurewebsites.net/api/SQLFormCompleter?'   'http://localhost:7071/api/SQLFormCompleter'
     var trigger_url = 'https://pricescraper.azurewebsites.net/api/SQLFormInputter?';
-    var params = query;
-   
-    http.open('POST', url, true);
+    
+    http.open('POST', trigger_url+params, true);
 
     http.setRequestHeader('Content-type', 'application/multipart/form-data');
 
@@ -52,10 +52,20 @@ function jsonifyData(event)
             alert(http.responseText);
         }
     }
-    http.send(params);
-    console.log("PARAMS: " + http.responseText);
-    console.log(query);
-  
+    console.log("POST: " + trigger_url+params);
+    console.log(params);
+   
+
+    /*$.ajax({
+        type: "POST",
+        url: url,
+        data: data,
+        success: function(data, textStatus, jqXHR)
+        {
+            console.log("success");
+        },
+      });
+      */
     $('#popup').html("FORM STATUS: SUCCESS");  
     
 }
@@ -120,3 +130,4 @@ function validateURL(url)
     
     return url;
 }
+
