@@ -14,22 +14,10 @@ function jsonifyData(event)
     }  
     if(validatePhonenumber(phonenumber) == null)
     {
-        $('#popup').html("INVALID PHONENUMBER");
+        document.getElementById("popup").innerHTML = "INVALID PHONENUMBER";
+        //$('#popup').html("INVALID PHONENUMBER");
         return;
     }  
-/*
-    $.ajax({
-        type: "POST",
-        url: trigger_url,
-        data: sql_data,
-        success: null,
-        dataType: 'json'
-      });
-
-      $.post(trigger_url, sql_data, null, "json");
-   */
-
-
 
     var sql_data = {
         "phonenumber": validatePhonenumber(phonenumber),
@@ -54,19 +42,9 @@ function jsonifyData(event)
     }
     console.log("POST: " + trigger_url+params);
     console.log(params);
-   
-
-    /*$.ajax({
-        type: "POST",
-        url: url,
-        data: data,
-        success: function(data, textStatus, jqXHR)
-        {
-            console.log("success");
-        },
-      });
-      */
-    $('#popup').html("FORM STATUS: SUCCESS");  
+ 
+    document.getElementById("popup").innerHTML = "FORM STATUS: SUCCESS";
+    //$('#popup').html("FORM STATUS: SUCCESS");  
     
 }
 
